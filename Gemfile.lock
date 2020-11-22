@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/ncs1/serviceworker-rails
+  revision: 6f1e5d7d6c5524afd8d545d0b2d3b545796f61aa
+  specs:
+    serviceworker-rails (0.6.0)
+      railties (>= 3.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -155,8 +162,6 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
-    serviceworker-rails (0.6.0)
-      railties (>= 3.1)
     spring (2.1.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -210,7 +215,7 @@ DEPENDENCIES
   rails (~> 6.0.3, >= 6.0.3.1)
   sass-rails (>= 6)
   selenium-webdriver
-  serviceworker-rails
+  serviceworker-rails!
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
