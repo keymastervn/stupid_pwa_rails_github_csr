@@ -80,4 +80,4 @@ const displayIssue = (number) => {
     });
   });
 };
-window.App.displayIssue = displayIssue;
+App.displayIssue = displayIssue;
