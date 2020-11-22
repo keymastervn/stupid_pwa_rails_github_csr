@@ -1,6 +1,6 @@
 if (navigator.serviceWorker) {
   navigator.serviceWorker
-    .register("/serviceworker.js", { scope: "./" })
+    .register("/service-worker.js", { scope: "/" })
       .then(function() {
         console.log("[Companion]", "Rails Service worker registered!")
       })
