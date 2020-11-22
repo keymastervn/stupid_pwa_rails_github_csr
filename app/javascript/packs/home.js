@@ -1,7 +1,7 @@
 // Only CSR
 
 document.addEventListener("DOMContentLoaded", () => {
-  console.log('wtf')
+  console.log("wtf");
   fetchData("open");
   issueSelectHandler();
 });
@@ -13,12 +13,11 @@ const buildTableRow = (issue, issueTable) => {
   newRow.innerHTML = `
     <tr>
       <td>${number}</td>
-      <td>
-        <a href="" onClick="alert(${JSON.stringify(issue)})">${title}</a>
-      </td>
+      <td>${title}</td>
       <td>${user.login}</td>
       <td>${state}</td>
       <td>${created_at}</td>
+      <td><button type="button" class="btn btn-info" onclick="window.App.displayIssue(${number})">Show</button></td>
     </tr>
   `;
 };
@@ -61,3 +60,24 @@ const cleanTbody = (issueTable) => {
     tb.deleteRow(0);
   }
 };
+
+window.App = {};
+const App = window.App;
+
+const displayIssue = (number) => {
+  fetch(
+    `https://api.github.com/repos/nnluukhtn/employment_bot/issues/${number}`
+  ).then(function (response) {
+    if (response.status !== 200) {
+      console.log(
+        "Looks like there was a problem. Status Code: " + response.status
+      );
+      return;
+    }
+
+    response.json().then((issue) => {
+      alert(JSON.stringify(issue));
+    });
+  });
+};
+window.App.displayIssue = displayIssue;
